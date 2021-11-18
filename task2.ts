@@ -22,7 +22,7 @@ const addToDB = (data: Book) => {
 
 readableStream
   .pipe(csv())
-  .subscribe((data) => addToDB(data))
+  .subscribe((data: Book) => addToDB(data))
   .pipe(writableStream)
   .on('error', (error) => {
     console.error(error.message);
